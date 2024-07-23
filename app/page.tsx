@@ -45,16 +45,16 @@ export default function Home() {
               </NavigationMenu.Trigger>
               <NavigationMenu.Content className="bg-slate-600 absolute top-[107px] rounded-sm grid grid-cols-2  items-center justify-center">
                 <Link href="#" className="hover:bg-red-600 p-4">
-                  Serviços
+                AGE
                 </Link>
                 <Link href="#" className="hover:bg-red-600 p-4">
-                  Serviços
+                AGE Online
                 </Link>
                 <Link href="#" className="hover:bg-red-600 p-4">
-                  Serviços
+                AVALIAÇÃO
                 </Link>
                 <Link href="#" className="hover:bg-red-600 p-4">
-                  Serviços
+                SALA VIRTUAL
                 </Link>
               </NavigationMenu.Content>
             </NavigationMenu.Item>
@@ -65,16 +65,16 @@ export default function Home() {
               </NavigationMenu.Trigger>
               <NavigationMenu.Content className="bg-slate-600 absolute top-[107px] rounded-sm grid grid-cols-2  items-center justify-center">
                 <Link href="#" className="hover:bg-red-600 p-4">
-                  Legislação
+                Regulamento Da Habilitação Legal Para Conduzir
                 </Link>
                 <Link href="#" className="hover:bg-red-600 p-4">
-                  Legislação
+                Regulamento De Sinalização Do Trânsito
                 </Link>
                 <Link href="#" className="hover:bg-red-600 p-4">
-                  Legislação
+                Código Da Estrada
                 </Link>
                 <Link href="#" className="hover:bg-red-600 p-4">
-                  Legislação
+                  Regime Jurídico Do Ensino Da Condução
                 </Link>
               </NavigationMenu.Content>
             </NavigationMenu.Item>
@@ -103,7 +103,7 @@ export default function Home() {
       {/* first section, the landing */}
       <section
         id="landing"
-        className="relative top-[100px] text-black flex justify-around items-center px-36 mx-auto overflow-x-hidden pt-10 mb-36"
+        className="relative top-[100px] text-black flex justify-around items-center px-36 mx-auto overflow-x-hidden pt-10 mb-36 text-[20px]"
       >
         <div className="flex flex-col justify-center items-start gap-4 w-[600px]">
           <h1 className="font-two text-[48px] font-bold">
@@ -143,7 +143,7 @@ export default function Home() {
       </div>
 
       {/* second sections, about the company */}
-      <section id="about" className="text-black mb-40 px-48">
+      <section id="about" className="text-black mb-40 px-48 text-[20px]">
         <div className="pb-20">
           <h2 className="text-[48px] font-bold text-center  font-two">
             <span className="text-red-600">Sobre</span> Empresa
@@ -154,7 +154,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex justify-center items-center px-48 gap-10">
+        <div className="flex justify-center items-center  gap-10">
           {/* <div className="flex">
           <Image alt="" src={CarImage1}  width={600} className="rounded-lg"/>
         </div> */}
@@ -183,7 +183,7 @@ export default function Home() {
       </section>
 
       {/* Third Section, about the Software */}
-      <section id="Software" className="text-black px-48 mb-40">
+      <section id="Software" className="text-black px-48 mb-40 text-[20px]">
         <div className="pb-20">
           <h2 className="text-[48px] font-bold text-center font-two">
             <span className="text-red-600">Cont</span>actos
@@ -218,8 +218,8 @@ export default function Home() {
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
             ></iframe>
           </div>
-          <div className="bg-slate-100 flex justify-center items-center rounded-lg">
-            <form className="bg-transparent w-full p-10">
+          <div className="bg-slate-100 flex justify-center items-center rounded-lg ">
+            <form className="bg-transparent w-full p-10 ">
               <div className="grid grid-cols-2 gap-3">
                 <div className="">
                   <input
