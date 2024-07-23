@@ -31,8 +31,8 @@ export default function Home() {
                 Sobre
               </Link>
             </NavigationMenu.Item>
-            <NavigationMenu.Item>
-              <NavigationMenu.Trigger className="hover:text-red-600 flex group">
+            <NavigationMenu.Item className="group">
+              <NavigationMenu.Trigger className="hover:text-red-600 flex ">
                 Serviços
                 <ChevronDown className="group-hover:rotate-180 transition-transform duration-150" />
               </NavigationMenu.Trigger>
@@ -51,8 +51,8 @@ export default function Home() {
                 </Link>
               </NavigationMenu.Content>
             </NavigationMenu.Item>
-            <NavigationMenu.Item>
-              <NavigationMenu.Trigger className="hover:text-red-600 flex group">
+            <NavigationMenu.Item className="group">
+              <NavigationMenu.Trigger className="hover:text-red-600 flex ">
                 Legislação{" "}
                 <ChevronDown className="group-hover:rotate-180 transition-transform duration-150" />
               </NavigationMenu.Trigger>
