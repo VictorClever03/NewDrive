@@ -4,7 +4,7 @@ import logoApp from "@/public/logo.png";
 import CarImage from "@/public/car.png";
 import CarImage1 from "@/public/download.jpeg";
 import Link from "next/link";
-import { ChevronDown, Facebook, Youtube } from "lucide-react";
+import { ChevronDown, Facebook, Mail, MapPin, Phone, Youtube } from "lucide-react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import SwipperComponent from "./src/components/SwipperComponent";
 import Carousel from "./src/components/Carousel";
@@ -136,7 +136,7 @@ export default function Home() {
       </div>
 
       {/* second sections, about the company */}
-      <section id="about" className="text-black">
+      <section id="about" className="text-black mb-40">
         <div className="pb-20">
           <h2 className="text-[48px] font-bold text-center  font-two">
             <span className="text-red-600">Sobre</span> Empresa
@@ -171,6 +171,74 @@ export default function Home() {
                 venenatis pellentesque.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+       {/* Third Section, about the Software */}
+       <section id="Software" className="text-black px-48 mb-40">
+        <div className="pb-20">
+          <h2 className="text-[48px] font-bold text-center font-two">
+          <span className="text-red-600">Cont</span>actos
+          </h2>
+          <p className="text-center text-gray-500">
+            Somos a New Drive Tecnology and Training Uma empresa dedicada 
+          </p>
+        </div>
+        <div className="grid grid-cols-4  gap-x-5">
+          <div className="col-span-2 bg-slate-100 rounded-lg flex flex-col justify-center items-center p-10 gap-1 hover:brightness-95 cursor-pointer">
+            <MapPin className="text-red-600 w-14 h-14"/>
+            <h3 className="font-two font-bold text-lg">Endereço</h3>
+            <p className="text-gray-500 italic">Rua [Rua], [Número], [Localidade]</p>
+          </div>
+          <div className="bg-slate-100 rounded-lg flex flex-col justify-center items-center p-10 gap-1 hover:brightness-95 cursor-pointer">
+            <Phone className="text-red-600 w-14 h-14"/>
+            <h3 className="font-two font-bold text-lg">Telefone</h3>
+            <p className="text-gray-500 italic">+244 938 295 867</p>
+          </div>
+          <div className="bg-slate-100 rounded-lg flex flex-col justify-center items-center p-10 gap-1 hover:brightness-95 cursor-pointer">
+            <Mail className="text-red-600 w-14 h-14"/>
+            <h3 className="font-two font-bold text-lg">Email</h3>
+            <p className="text-gray-500 italic">vectorclever00@gmail.com</p>
+          </div>
+
+        </div>
+        <div className="grid grid-cols-2  gap-5 my-5">
+          <div>
+          <iframe className="border-0 w-full h-[400px] rounded-lg" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" ></iframe>
+          </div>
+          <div className="bg-slate-100 flex justify-center items-center rounded-lg">
+          <form className="bg-transparent ">
+              <div className="grid grid-cols-2 gap-3">
+
+                <div  className="">
+                  <input className="bg-slate-50 h-[43px] border text-gray-600 text-sm border-gray-200 rounded-md placeholder:text-gray-400 placeholder:text-sm p-2 focus:border-red-600" type="text" name="name"  placeholder="Your Name" />
+                </div>
+
+                <div >
+                  <input className="bg-slate-50 h-[43px] border text-gray-600 text-sm border-gray-200 rounded-md placeholder:text-gray-400 placeholder:text-sm p-2 focus:border-red-600" type="email"  name="email" placeholder="Your Email" />
+                </div>
+
+                <div className="col-span-2">
+                  <input className="bg-slate-50 h-[43px] border text-gray-600 text-sm border-gray-200 rounded-md placeholder:text-gray-400 placeholder:text-sm p-2 focus:border-red-600 w-full" type="text"  name="subject" placeholder="Subject" />
+                </div>
+
+                <div className="col-span-2">
+                  <textarea className="bg-slate-50 h-[143px] border text-gray-600 text-sm border-gray-200 rounded-md placeholder:text-gray-400 placeholder:text-sm p-2 focus:border-red-600 w-full"  name="message"  placeholder="Message" ></textarea>
+                </div>
+
+                <div className="place-self-center col-span-2">
+                  
+                  <button
+              type="button"
+              className="font-[500] px-[30px] py-[16px] bg-red-600 rounded text-white hover:brightness-90"
+            >
+              Enviar
+            </button>
+                </div>
+
+              </div>
+            </form>
           </div>
         </div>
       </section>
