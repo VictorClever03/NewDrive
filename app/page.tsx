@@ -7,14 +7,21 @@ import Link from "next/link";
 import {
   ChevronDown,
   Facebook,
+  Globe,
+  Handshake,
   Mail,
   MapPin,
+  MonitorCheck,
   Phone,
+  PlayCircleIcon,
+  SquareCheck,
   Youtube,
 } from "lucide-react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import SwipperComponent from "./src/components/SwipperComponent";
 import Carousel from "./src/components/Carousel";
+import { VideoPlayer } from "./src/components/VideoPlayer";
+import * as Dialog from "@radix-ui/react-dialog";
 
 export default function Home() {
   return (
@@ -40,21 +47,21 @@ export default function Home() {
             </NavigationMenu.Item>
             <NavigationMenu.Item className="group">
               <NavigationMenu.Trigger className="hover:text-red-600 flex ">
-                Serviços
+                Software
                 <ChevronDown className="group-hover:rotate-180 transition-transform duration-150" />
               </NavigationMenu.Trigger>
               <NavigationMenu.Content className="bg-slate-600 absolute top-[107px] rounded-sm grid grid-cols-2  items-center justify-center">
                 <Link href="#" className="hover:bg-red-600 p-4">
-                AGE
+                  AGE
                 </Link>
                 <Link href="#" className="hover:bg-red-600 p-4">
-                AGE Online
+                  AGE Online
                 </Link>
                 <Link href="#" className="hover:bg-red-600 p-4">
-                AVALIAÇÃO
+                  AVALIAÇÃO
                 </Link>
                 <Link href="#" className="hover:bg-red-600 p-4">
-                SALA VIRTUAL
+                  SALA VIRTUAL
                 </Link>
               </NavigationMenu.Content>
             </NavigationMenu.Item>
@@ -65,13 +72,13 @@ export default function Home() {
               </NavigationMenu.Trigger>
               <NavigationMenu.Content className="bg-slate-600 absolute top-[107px] rounded-sm grid grid-cols-2  items-center justify-center">
                 <Link href="#" className="hover:bg-red-600 p-4">
-                Regulamento Da Habilitação Legal Para Conduzir
+                  Regulamento Da Habilitação Legal Para Conduzir
                 </Link>
                 <Link href="#" className="hover:bg-red-600 p-4">
-                Regulamento De Sinalização Do Trânsito
+                  Regulamento De Sinalização Do Trânsito
                 </Link>
                 <Link href="#" className="hover:bg-red-600 p-4">
-                Código Da Estrada
+                  Código Da Estrada
                 </Link>
                 <Link href="#" className="hover:bg-red-600 p-4">
                   Regime Jurídico Do Ensino Da Condução
@@ -155,6 +162,121 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center items-center  gap-10">
+          <div className="bg-slate-100 w-[50%] h-auto my-10 rounded-lg">
+            <Carousel />
+          </div>
+          <div className="flex flex-col gap-6 mx-auto w-[600px]">
+            <div>
+              <h3 className="font-bold">Missão</h3>
+              <p className="text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                efficitur et turpis non varius. Sed at justo non turpis
+                venenatis pellentesque.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold">Nossa Equipe</h3>
+              <p className="text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                efficitur et turpis non varius. Sed at justo non turpis
+                venenatis pellentesque.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* third sections, about the company */}
+      <section id="about" className="text-black mb-40 px-48 text-[20px]">
+        <div className="pb-20">
+          <h2 className="text-[48px] font-bold text-center  font-two">
+            <span className="text-red-600">O</span> Software
+          </h2>
+          <p className="text-center text-gray-500">
+            Somos a New Drive Tecnology and Training <br /> Uma empresa dedicada
+            a Ensino de condução. Fundada em [Ano] por [Fundador]
+          </p>
+        </div>
+
+        <div className="flex justify-center items-center  gap-10">
+          <div className="flex flex-col gap-6 mx-auto w-[600px]">
+            <h1 className="text-[48px] font-two">
+              <span className="text-red-600">VEJA COMO FUNCIONA </span>SOFTWARE
+              DE APOIO AO ENSINO DA CONDUÇÃO
+            </h1>
+          </div>
+          <div className="w-[50%] h-auto my-10 rounded-lg">
+            <div className="flex relative">
+              <Image alt="" src={CarImage1} className="rounded-lg w-full" />
+              
+                <PlayCircleIcon className="w-20 h-20 text-red-600 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer hover:brightness-150" />
+           
+            </div>
+          </div>
+        </div>
+
+        <div id="cards" className="flex flex-row justify-between items-center gap-10 text-white ">
+          <div className="bg-slate-500 p-10 flex justify-center items-center flex-col gap-5 rounded-md" >
+            <Handshake className="w-10 h-10"/>
+            <h3 className="font-two font-bold text-[25px]">AGE</h3>
+            <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, facere.</p>
+            <button
+              type="button"
+              className="font-[500] px-[10px] py-[16px] bg-red-600 rounded text-white hover:brightness-90"
+            >
+              Saber Mais
+            </button>
+          </div>
+          
+          <div className="bg-slate-500 p-10 flex justify-center items-center flex-col gap-5 rounded-md">
+          <Globe className="w-10 h-10"/>
+            <h3 className="font-two font-bold text-[25px]">AGE ONLINE</h3>
+            <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, facere.</p>
+            <button
+              type="button"
+              className="font-[500] px-[10px] py-[16px] bg-red-600 rounded text-white hover:brightness-90"
+            >
+              Saber Mais
+            </button>
+          </div>
+          <div className="bg-slate-500 p-10 flex justify-center items-center flex-col gap-5 rounded-md">
+          <SquareCheck className="w-10 h-10"/>
+            <h3 className="font-two font-bold text-[25px]">AVALIAÇÃO</h3>
+            <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, facere.</p>
+            <button
+              type="button"
+              className="font-[500] px-[10px] py-[16px] bg-red-600 rounded text-white hover:brightness-90"
+            >
+              Saber Mais
+            </button>
+            </div>
+          <div className="bg-slate-500 p-10 flex justify-center items-center flex-col gap-5 rounded-md">
+          <MonitorCheck className="w-10 h-10"/>
+            <h3 className="font-two font-bold text-[25px]">SALA VIRTUAL</h3>
+            <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, facere.</p>
+            <button
+              type="button"
+              className="font-[500] px-[10px] py-[16px] bg-red-600 rounded text-white hover:brightness-90"
+            >
+              Saber Mais
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* fourth sections, about the company */}
+      <section id="about" className="text-black mb-40 px-48 text-[20px]">
+        <div className="pb-20">
+          <h2 className="text-[48px] font-bold text-center  font-two">
+            <span className="text-red-600">Legis</span>lação
+          </h2>
+          <p className="text-center text-gray-500">
+            Somos a New Drive Tecnology and Training <br /> Uma empresa dedicada
+            a Ensino de condução. Fundada em [Ano] por [Fundador]
+          </p>
+        </div>
+
+        <div className="flex justify-center items-center  gap-10">
           {/* <div className="flex">
           <Image alt="" src={CarImage1}  width={600} className="rounded-lg"/>
         </div> */}
@@ -182,7 +304,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Third Section, about the Software */}
+      {/* fifth sections, about the company */}
+      <section id="about" className="text-black mb-40 px-48 text-[20px]">
+        <div className="pb-20">
+          <h2 className="text-[48px] font-bold text-center  font-two">
+            <span className="text-red-600">Sup</span>orte
+          </h2>
+          <p className="text-center text-gray-500">
+            Somos a New Drive Tecnology and Training <br /> Uma empresa dedicada
+            a Ensino de condução. Fundada em [Ano] por [Fundador]
+          </p>
+        </div>
+
+        <div className="flex justify-center items-center  gap-10">
+          {/* <div className="flex">
+          <Image alt="" src={CarImage1}  width={600} className="rounded-lg"/>
+        </div> */}
+          <div className="bg-slate-100 w-[50%] h-auto my-10 rounded-lg">
+            <Carousel />
+          </div>
+          <div className="flex flex-col gap-6 mx-auto w-[600px]">
+            <div>
+              <h3 className="font-bold">Missão</h3>
+              <p className="text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                efficitur et turpis non varius. Sed at justo non turpis
+                venenatis pellentesque.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold">Nossa Equipe</h3>
+              <p className="text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                efficitur et turpis non varius. Sed at justo non turpis
+                venenatis pellentesque.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* last Section, about the Software */}
       <section id="Software" className="text-black px-48 mb-40 text-[20px]">
         <div className="pb-20">
           <h2 className="text-[48px] font-bold text-center font-two">
@@ -311,7 +473,7 @@ export default function Home() {
               </li>
               <li>
                 <Link href="/software" className="hover:text-red-600">
-                  Serviços
+                  Software
                 </Link>
               </li>
               <li>
