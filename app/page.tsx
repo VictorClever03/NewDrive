@@ -6,6 +6,7 @@ import CarImage1 from "@/public/download.jpeg";
 import Link from "next/link";
 import {
   ChevronDown,
+  Dot,
   Facebook,
   Globe,
   Handshake,
@@ -22,6 +23,10 @@ import SwipperComponent from "./src/components/SwipperComponent";
 import Carousel from "./src/components/Carousel";
 import { VideoPlayer } from "./src/components/VideoPlayer";
 import * as Dialog from "@radix-ui/react-dialog";
+import AGE from "./src/components/AGE";
+import ageonlineImage from "@/public/ageonline.png";
+import Avaliacao from "./src/components/Avaliacao";
+import { SlideSalaOnline } from "./src/components/SlidesSalaOnline";
 
 export default function Home() {
   return (
@@ -187,8 +192,8 @@ export default function Home() {
       </section>
 
       {/* third sections, about the company */}
-      <section id="about" className="text-black mb-40 px-48 text-[20px]">
-        <div className="pb-20">
+      <section id="about" className="text-black mb-40  text-[20px]">
+        <div className="pb-20 px-48">
           <h2 className="text-[48px] font-bold text-center  font-two">
             <span className="text-red-600">O</span> Software
           </h2>
@@ -198,7 +203,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex justify-center items-center  gap-10">
+        <div className="flex justify-center items-center  gap-10 px-48">
           <div className="flex flex-col gap-6 mx-auto w-[600px]">
             <h1 className="text-[48px] font-two">
               <span className="text-red-600">VEJA COMO FUNCIONA </span>SOFTWARE
@@ -208,58 +213,350 @@ export default function Home() {
           <div className="w-[50%] h-auto my-10 rounded-lg">
             <div className="flex relative">
               <Image alt="" src={CarImage1} className="rounded-lg w-full" />
-              
-                <PlayCircleIcon className="w-20 h-20 text-red-600 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer hover:brightness-150" />
-           
+
+              <Dialog.Root>
+                <Dialog.Trigger>
+                  <PlayCircleIcon className="w-20 h-20 text-red-600 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer hover:brightness-150" />
+                </Dialog.Trigger>
+                <Dialog.Portal>
+                  <Dialog.Overlay className="fixed w-[100vw] h-[100vh] inset-0" />
+                  <Dialog.Content className="w-auto rounded-md p-1  fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                    {/* <Dialog.Title >wwww</Dialog.Title> */}
+                    {/* <Dialog.Description >cccc</Dialog.Description> */}
+                    <VideoPlayer
+                      srcvideo="comofunciona.mp4"
+                      style="rounded-md min-w-[800px]"
+                    />
+                    {/* <Dialog.Close >xxx</Dialog.Close> */}
+                  </Dialog.Content>
+                </Dialog.Portal>
+              </Dialog.Root>
             </div>
           </div>
         </div>
 
-        <div id="cards" className="flex flex-row justify-between items-center gap-10 text-white ">
-          <div className="bg-slate-500 p-10 flex justify-center items-center flex-col gap-5 rounded-md" >
-            <Handshake className="w-10 h-10"/>
-            <h3 className="font-two font-bold text-[25px]">AGE</h3>
-            <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, facere.</p>
+        <div
+          id="cards"
+          className="flex flex-row justify-between items-center gap-10 text-white min-w-52 px-36 "
+        >
+          <div className="bg-slate-500 p-10 flex justify-center items-center flex-col gap-5 rounded-md flex-wrap cursor-pointer hover:brightness-90">
+            <Handshake className="w-10 h-10" />
+            <h3 className="font-two font-bold text-[20px]">AGE</h3>
+            <p className="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+              facere.
+            </p>
             <button
               type="button"
-              className="font-[500] px-[10px] py-[16px] bg-red-600 rounded text-white hover:brightness-90"
+              className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90"
             >
               Saber Mais
             </button>
           </div>
-          
-          <div className="bg-slate-500 p-10 flex justify-center items-center flex-col gap-5 rounded-md">
-          <Globe className="w-10 h-10"/>
-            <h3 className="font-two font-bold text-[25px]">AGE ONLINE</h3>
-            <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, facere.</p>
+
+          <div className="bg-slate-500 p-10 flex justify-center items-center flex-col gap-5 rounded-md flex-wrap cursor-pointer hover:brightness-90">
+            <Globe className="w-10 h-10" />
+            <h3 className="font-two font-bold text-[20px]">AGE ONLINE</h3>
+            <p className="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+              facere.
+            </p>
             <button
               type="button"
-              className="font-[500] px-[10px] py-[16px] bg-red-600 rounded text-white hover:brightness-90"
+              className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90"
             >
               Saber Mais
             </button>
           </div>
-          <div className="bg-slate-500 p-10 flex justify-center items-center flex-col gap-5 rounded-md">
-          <SquareCheck className="w-10 h-10"/>
-            <h3 className="font-two font-bold text-[25px]">AVALIAÇÃO</h3>
-            <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, facere.</p>
+
+          <div className="bg-slate-500 p-10 flex justify-center items-center flex-col gap-5 rounded-md flex-wrap cursor-pointer hover:brightness-90">
+            <SquareCheck className="w-10 h-10" />
+            <h3 className="font-two font-bold text-[20px]">AVALIAÇÃO</h3>
+            <p className="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+              facere.
+            </p>
             <button
               type="button"
-              className="font-[500] px-[10px] py-[16px] bg-red-600 rounded text-white hover:brightness-90"
+              className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90"
             >
               Saber Mais
             </button>
+          </div>
+
+          <div className="bg-slate-500 p-10 flex justify-center items-center flex-col gap-5 rounded-md flex-wrap cursor-pointer hover:brightness-90">
+            <MonitorCheck className="w-10 h-10" />
+            <h3 className="font-two font-bold text-[20px]">SALA VIRTUAL</h3>
+            <p className="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+              facere.
+            </p>
+            <button
+              type="button"
+              className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90"
+            >
+              Saber Mais
+            </button>
+          </div>
+        </div>
+
+        <div id="theSoftware ">
+          <div className="px-48 mt-20">
+            <div className="">
+              <span className="text-justify">
+                <h3 className="flex justify-start items-center font-two font-bold text-[30px] mb-10">
+                  <Dot className="text-red-600 w-10 h-10" /> AGE (Gestão)
+                </h3>
+                <p>
+                  As melhores escolas de condução do país já o usam. Perante as
+                  exigências de um processo de certificação de qualidade,
+                  exigiram-nos o melhor. Pela sua fiabilidade e qualidade, o AGE
+                  2010 foi uma escolha natural. Agora há finalmente um programa
+                  de qualidade também para a sua escola.
+                  <br />
+                  <br />O módulo de gestão inclui todas as funcionalidades
+                  necessárias para fazer a gestão de uma escola de condução e
+                  todos os procedimentos necessários exigidos pelo IMT. Desde o
+                  registo de inscrições até às consultas, listagens e
+                  estatísticas sobre o funcionamento da escola, passando pela
+                  facturação, requerimento de licenças, registo de lições e
+                  avaliações, pedidos de exame, marcações e resultados.
+                </p>
+              </span>
+              <figure className="w-full mt-5">
+                <AGE />
+              </figure>
+              <span className="flex justify-between items-center mt-10 text-justify gap-10">
+                <span className=" w-1/2">
+                  <h4 className="font-bold mb-5">Demonstração</h4>
+                  <p>
+                    Instalação completa do{" "}
+                    <strong>AGE 2010 – Gestão Administrativa.</strong>
+                    <br />
+                    Este ficheiro é um programa de instalação. Ao executar
+                    deverá clicar no botão INSTALAR.{" "}
+                    <small>Tamanho do ficheiro: 22,8 MB.</small>
+                  </p>
+                  <a href="Software/demo-age2000-gestao.exe" download>
+                    <button
+                      type="button"
+                      className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 mt-5 "
+                    >
+                      Faça aqui o download da demonstração
+                    </button>
+                  </a>
+                </span>
+                <span className="w-1/2">
+                  <h4 className="font-bold mb-5">Atualizações</h4>
+                  <p>
+                    Actualização do{" "}
+                    <strong> AGE 2010 – Gestão Administrativa</strong>{" "}
+                    <small>versão 6.22 – 16-12-2022.</small>
+                    <br /> Este ficheiro é um programa de actualização. Ao
+                    executar deverá clicar no botão INSTALAR.
+                    <small> Tamanho do ficheiro: 23,5 MB.</small>
+                  </p>
+                  <span className="mt-5 flex justify-start items-center gap-5">
+                    <a href="Software/age2010-622.exe" download>
+                      <button
+                        type="button"
+                        className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90"
+                      >
+                        Faça aqui a Atualização
+                      </button>
+                    </a>
+                    <button
+                      type="button"
+                      className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90"
+                    >
+                      Novidades da versão 6.22
+                    </button>
+                  </span>
+                </span>
+              </span>
             </div>
-          <div className="bg-slate-500 p-10 flex justify-center items-center flex-col gap-5 rounded-md">
-          <MonitorCheck className="w-10 h-10"/>
-            <h3 className="font-two font-bold text-[25px]">SALA VIRTUAL</h3>
-            <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, facere.</p>
-            <button
-              type="button"
-              className="font-[500] px-[10px] py-[16px] bg-red-600 rounded text-white hover:brightness-90"
-            >
-              Saber Mais
-            </button>
+
+            <div className="mt-20 text-justify">
+              <span className=" ">
+                <h3 className="flex justify-start items-center font-two font-bold text-[30px] mb-10">
+                  <Dot className="text-red-600 w-10 h-10" />
+                  Plataforma AGEOnline
+                </h3>
+                <span className="flex justify-between items-center gap-10 ">
+                  <p>
+                    AGE-Online é uma plataforma de registo obrigatório online da
+                    formação teórica e prática de escolas de condução. <br />
+                    <br /> Actualmente está a ser usada por cerca de 300 escolas
+                    de condução.Cumpre a Lei n.º 14/2014 e respectiva
+                    regulamentação. Regista a identificação da escola de
+                    condução e respectiva empresa exploradora, os dados dos
+                    instrutores, dos veículos da instrução, dos alunos e toda a
+                    sua formação teórica e prática.Esta informação pode ser
+                    consultada pelas escolas de condução e pelo IMT. Os alunos
+                    poderão consultar a sua ficha de inscrição e toda sua
+                    formação, não só as aulas realizadas mas também as aulas
+                    marcadas.
+                  </p>
+                  <Image alt="ageonline" src={ageonlineImage} />
+                </span>
+              </span>
+              <br />
+              <br />
+              <div className="mb-20">
+                <h4 className="font-bold mb-5">
+                  Para programadores e integradores de sistemas
+                </h4>
+                <p>
+                  AGE-Online é uma plataforma aberta a qualquer sistema útil
+                  para escolas de condução. Qualquer empresa que preste serviços
+                  para escolas de condução poderá desenvolver a ligação à
+                  AGE-Online. Esta ligação é gratuita.Já existem os seguintes
+                  sistemas a tirar partido da AGE-Online:  </p>
+                  <ul className="list-disc pl-10">
+                    <li>Simulador de condução – da empresa Brainwork</li>
+                    <li>Simulador de condução – da empresa Ptware</li>
+                    <li>
+                      Dispositivo de monitorização de aulas práticas – da
+                      empresa Ptware{" "}
+                    </li>
+                    <li>
+                      Aplicação de gestão de escolas de condução AGE – da
+                      empresa Interage{" "}
+                    </li>
+                  </ul>
+                  <br />
+                  E estão em desenvolvimento:
+                  <br />
+                  <br />
+                  <ul className="list-disc pl-10 mb-5">
+                    <li>Uma plataforma de formação online</li>
+                    <li>
+                      Um sistema de GPS para monitorização de aulas práticas
+                    </li>
+                    <li>Uma plataforma de testes online</li>
+                    <li>
+                      Uma aplicação online de gestão para escolas de condução
+                    </li>
+                  </ul>
+                  A especificação do webservice está em{" "}
+                  <a href="ageonline.pt/help" target="_blank">
+                    ageonline.pt/help{" "}
+                  </a>
+                  <br />A documentação está em{" "}
+                  <a href="ageonline.pt/docs" target="_blank">
+                    ageonline.pt/docs
+                  </a>
+                  <br />
+                  Contacte-nos para obter um login de desenvolvimento.
+                  <br />
+                <button
+                  type="button"
+                  className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 mt-5"
+                >
+                  <a href="http://ageonline.pt/" target="_blank">
+                    AGEOnline
+                  </a>
+                </button>
+              </div>
+            </div>
+
+            <div className="text-justify mb-20">
+              <span className=" flex justify-between items-start gap-10">
+                <span>
+              <h3 className="flex justify-start items-center font-two font-bold text-[30px] mb-10">
+                <Dot className="text-red-600 w-10 h-10" /> Avaliação
+                <span className="text-green-500"> &nbsp; €100.00</span>
+              </h3>
+                  <p className="mb-5">
+                    Os testes multimédia são semelhantes aos da IMT e todo o
+                    sistema está preparado para funcionar com um ecrã táctil
+                    (touch screen) ou tablet Windows. <br />Tem testes de código
+                    comum, específicos de motociclos e específicos das
+                    categorias C e D. <br />Pode ser controlada a permissão a todas as
+                    funcionalidades abaixo descritas, de maneira a que se tenha
+                    acesso ou não. <br />O sistema pode ser configurado para guardar
+                    os resultados dos testes de maneira a fazer a gestão da
+                    avaliação dos alunos.
+                  </p>
+                  <a href="https://ensinaraconduzir.pt/dwn/salavirtual.exe">
+                  <button type="button"
+              className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 w-full">Faça aqui o download gratuito</button></a><br /><br />
+                  <button type="button"
+              className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 w-full">Comprar pen USB</button>
+                </span>
+<span className="w-1/2">
+
+                <Avaliacao />
+</span>
+               
+              </span>
+
+              {/* <span>
+                <h4>Características</h4>
+                <p>
+                  Ao iniciar um novo teste, pode identificar os alunos para
+                  fazer a sua avaliação. Neste caso, cada aluno deve ter uma
+                  ficha. Há também a opção do aluno só ter acesso aos testes que
+                  lhe forem criados. Desta forma pode-se vender testes aos
+                  alunos. No modo livre, esta janela não aparece e o aluno pode
+                  fazer os testes que quiser. Mais de 6300 perguntas em
+                  constante actualização. Mais de 1400 perguntas de mecânica e
+                  500 perguntas sobre motociclos. Pode-se ir directamente para
+                  qualquer pergunta e o aluno pode terminar o teste quando
+                  desejar. O aluno ou instrutor têm a possibilidade de escolher
+                  o tipo de teste pretendido. Há testes de código comum,
+                  específicos de motociclos e específicos das categorias C e D.
+                  As perguntas são muito exigentes e próximas do exame oficial.
+                  Muitas foram mesmo retiradas dos exames. Podem ser realizados
+                  testes automáticos em sala sem a assistência do instrutor. Os
+                  resultados podem ser guardados para fazer a avaliação do
+                  aluno. Têm também a possibilidade de escolher as sub unidades
+                  temáticas sobre as quais querem executar um teste. O botão
+                  “TODAS” permite marcar ou desmarcar todas as sub unidades. A
+                  imagem pode ser redimensionada para melhor visualização. Ao
+                  terminar a avaliação é mostrado um relatório com informação
+                  sobre o tipo de teste realizado, data e hora, nome do aluno,
+                  resultado, quais as respostas certas e erradas, perguntas não
+                  respondidas, tempo por pergunta, número de respostas certas e
+                  erradas por sub unidade temática e estatísticas gerais. O
+                  relatório pode ser impresso. E pode-se ainda consultar as
+                  respostas erradas.
+                </p>
+              </span> */}
+            </div>
+
+            <div className="block text-justify mb-20">
+              <span className="flex justify-between items-start gap-10">
+              <span className="w-1/2">
+                <SlideSalaOnline />
+              </span>
+                <span>
+              <h3 className="flex justify-start items-center font-two font-bold text-[30px] mb-10">
+                <Dot className="text-red-600 w-10 h-10" /> Sala Virtual
+                <span className="text-green-500"> &nbsp; €400.00</span>
+              </h3>
+               
+                <p className="mb-5"> 
+                  A Sala Virtual contém todo o material pedagógico indispensável
+                  para o ensino do código da estrada em sala de aula. O
+                  instrutor pode exibir qualquer sinal, de forma fácil e rápida,
+                  bem como situações reais de trânsito onde este é aplicado. É
+                  possível apresentar vídeos e animações 3D que mostram a
+                  execução de manobras de forma certa ou errada, de cedência de
+                  passagem e de cruzamento de veículos. Toda a informação
+                  atualizada sobre os veículos e habilitação legal para
+                  conduzir. Pode também simular qualquer situação de trânsito.
+                </p>
+                <a href="https://ensinaraconduzir.pt/dwn/salavirtual.exe">
+                <button type="button"
+              className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 w-full">Faça aqui o download gratuito</button></a><br /><br />
+                <button type="button"
+              className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 w-full">Comprar Pen USB</button>
+                </span>
+              
+              
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -280,7 +577,7 @@ export default function Home() {
           {/* <div className="flex">
           <Image alt="" src={CarImage1}  width={600} className="rounded-lg"/>
         </div> */}
-          <div className="bg-slate-100 w-[50%] h-auto my-10 rounded-lg">
+          <div className="bg-slate-100 w-1/2 h-auto my-10 rounded-lg">
             <Carousel />
           </div>
           <div className="flex flex-col gap-6 mx-auto w-[600px]">
