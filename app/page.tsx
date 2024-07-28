@@ -90,11 +90,11 @@ export default function Home() {
                 </Link>
               </NavigationMenu.Content>
             </NavigationMenu.Item>
-            <NavigationMenu.Item>
+            {/* <NavigationMenu.Item>
               <Link href="#" className="hover:text-red-600">
                 Suporte
               </Link>
-            </NavigationMenu.Item>
+            </NavigationMenu.Item> */}
             <NavigationMenu.Item>
               <Link href="#" className="hover:text-red-600">
                 Contactos
@@ -411,44 +411,45 @@ export default function Home() {
                   para escolas de condução. Qualquer empresa que preste serviços
                   para escolas de condução poderá desenvolver a ligação à
                   AGE-Online. Esta ligação é gratuita.Já existem os seguintes
-                  sistemas a tirar partido da AGE-Online:  </p>
-                  <ul className="list-disc pl-10">
-                    <li>Simulador de condução – da empresa Brainwork</li>
-                    <li>Simulador de condução – da empresa Ptware</li>
-                    <li>
-                      Dispositivo de monitorização de aulas práticas – da
-                      empresa Ptware{" "}
-                    </li>
-                    <li>
-                      Aplicação de gestão de escolas de condução AGE – da
-                      empresa Interage{" "}
-                    </li>
-                  </ul>
-                  <br />
-                  E estão em desenvolvimento:
-                  <br />
-                  <br />
-                  <ul className="list-disc pl-10 mb-5">
-                    <li>Uma plataforma de formação online</li>
-                    <li>
-                      Um sistema de GPS para monitorização de aulas práticas
-                    </li>
-                    <li>Uma plataforma de testes online</li>
-                    <li>
-                      Uma aplicação online de gestão para escolas de condução
-                    </li>
-                  </ul>
-                  A especificação do webservice está em{" "}
-                  <a href="ageonline.pt/help" target="_blank">
-                    ageonline.pt/help{" "}
-                  </a>
-                  <br />A documentação está em{" "}
-                  <a href="ageonline.pt/docs" target="_blank">
-                    ageonline.pt/docs
-                  </a>
-                  <br />
-                  Contacte-nos para obter um login de desenvolvimento.
-                  <br />
+                  sistemas a tirar partido da AGE-Online:{" "}
+                </p>
+                <ul className="list-disc pl-10">
+                  <li>Simulador de condução – da empresa Brainwork</li>
+                  <li>Simulador de condução – da empresa Ptware</li>
+                  <li>
+                    Dispositivo de monitorização de aulas práticas – da empresa
+                    Ptware{" "}
+                  </li>
+                  <li>
+                    Aplicação de gestão de escolas de condução AGE – da empresa
+                    Interage{" "}
+                  </li>
+                </ul>
+                <br />
+                E estão em desenvolvimento:
+                <br />
+                <br />
+                <ul className="list-disc pl-10 mb-5">
+                  <li>Uma plataforma de formação online</li>
+                  <li>
+                    Um sistema de GPS para monitorização de aulas práticas
+                  </li>
+                  <li>Uma plataforma de testes online</li>
+                  <li>
+                    Uma aplicação online de gestão para escolas de condução
+                  </li>
+                </ul>
+                A especificação do webservice está em{" "}
+                <a href="ageonline.pt/help" target="_blank">
+                  ageonline.pt/help{" "}
+                </a>
+                <br />A documentação está em{" "}
+                <a href="ageonline.pt/docs" target="_blank">
+                  ageonline.pt/docs
+                </a>
+                <br />
+                Contacte-nos para obter um login de desenvolvimento.
+                <br />
                 <button
                   type="button"
                   className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 mt-5"
@@ -463,32 +464,42 @@ export default function Home() {
             <div className="text-justify mb-20">
               <span className=" flex justify-between items-start gap-10">
                 <span>
-              <h3 className="flex justify-start items-center font-two font-bold text-[30px] mb-10">
-                <Dot className="text-red-600 w-10 h-10" /> Avaliação
-                <span className="text-green-500"> &nbsp; €100.00</span>
-              </h3>
+                  <h3 className="flex justify-start items-center font-two font-bold text-[30px] mb-10">
+                    <Dot className="text-red-600 w-10 h-10" /> Avaliação
+                    <span className="text-green-500"> &nbsp; €100.00</span>
+                  </h3>
                   <p className="mb-5">
                     Os testes multimédia são semelhantes aos da IMT e todo o
                     sistema está preparado para funcionar com um ecrã táctil
-                    (touch screen) ou tablet Windows. <br />Tem testes de código
-                    comum, específicos de motociclos e específicos das
-                    categorias C e D. <br />Pode ser controlada a permissão a todas as
-                    funcionalidades abaixo descritas, de maneira a que se tenha
-                    acesso ou não. <br />O sistema pode ser configurado para guardar
-                    os resultados dos testes de maneira a fazer a gestão da
+                    (touch screen) ou tablet Windows. <br />
+                    Tem testes de código comum, específicos de motociclos e
+                    específicos das categorias C e D. <br />
+                    Pode ser controlada a permissão a todas as funcionalidades
+                    abaixo descritas, de maneira a que se tenha acesso ou não.{" "}
+                    <br />O sistema pode ser configurado para guardar os
+                    resultados dos testes de maneira a fazer a gestão da
                     avaliação dos alunos.
                   </p>
                   <a href="https://ensinaraconduzir.pt/dwn/salavirtual.exe">
-                  <button type="button"
-              className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 w-full">Faça aqui o download gratuito</button></a><br /><br />
-                  <button type="button"
-              className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 w-full">Comprar pen USB</button>
+                    <button
+                      type="button"
+                      className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 w-full"
+                    >
+                      Faça aqui o download gratuito
+                    </button>
+                  </a>
+                  <br />
+                  <br />
+                  <button
+                    type="button"
+                    className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 w-full"
+                  >
+                    Comprar pen USB
+                  </button>
                 </span>
-<span className="w-1/2">
-
-                <Avaliacao />
-</span>
-               
+                <span className="w-1/2">
+                  <Avaliacao />
+                </span>
               </span>
 
               {/* <span>
@@ -527,35 +538,70 @@ export default function Home() {
 
             <div className="block text-justify mb-20">
               <span className="flex justify-between items-start gap-10">
-              <span className="w-1/2">
-                <SlideSalaOnline />
-              </span>
-                <span>
-              <h3 className="flex justify-start items-center font-two font-bold text-[30px] mb-10">
-                <Dot className="text-red-600 w-10 h-10" /> Sala Virtual
-                <span className="text-green-500"> &nbsp; €400.00</span>
-              </h3>
-               
-                <p className="mb-5"> 
-                  A Sala Virtual contém todo o material pedagógico indispensável
-                  para o ensino do código da estrada em sala de aula. O
-                  instrutor pode exibir qualquer sinal, de forma fácil e rápida,
-                  bem como situações reais de trânsito onde este é aplicado. É
-                  possível apresentar vídeos e animações 3D que mostram a
-                  execução de manobras de forma certa ou errada, de cedência de
-                  passagem e de cruzamento de veículos. Toda a informação
-                  atualizada sobre os veículos e habilitação legal para
-                  conduzir. Pode também simular qualquer situação de trânsito.
-                </p>
-                <a href="https://ensinaraconduzir.pt/dwn/salavirtual.exe">
-                <button type="button"
-              className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 w-full">Faça aqui o download gratuito</button></a><br /><br />
-                <button type="button"
-              className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 w-full">Comprar Pen USB</button>
+                <span className="w-1/2">
+                  <SlideSalaOnline />
                 </span>
-              
-              
+                <span>
+                  <h3 className="flex justify-start items-center font-two font-bold text-[30px] mb-10">
+                    <Dot className="text-red-600 w-10 h-10" /> Sala Virtual
+                    <span className="text-green-500"> &nbsp; €400.00</span>
+                  </h3>
+
+                  <p className="mb-5">
+                    A Sala Virtual contém todo o material pedagógico
+                    indispensável para o ensino do código da estrada em sala de
+                    aula. O instrutor pode exibir qualquer sinal, de forma fácil
+                    e rápida, bem como situações reais de trânsito onde este é
+                    aplicado. É possível apresentar vídeos e animações 3D que
+                    mostram a execução de manobras de forma certa ou errada, de
+                    cedência de passagem e de cruzamento de veículos. Toda a
+                    informação atualizada sobre os veículos e habilitação legal
+                    para conduzir. Pode também simular qualquer situação de
+                    trânsito.
+                  </p>
+                  <a href="https://ensinaraconduzir.pt/dwn/salavirtual.exe">
+                    <button
+                      type="button"
+                      className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 w-full"
+                    >
+                      Faça aqui o download gratuito
+                    </button>
+                  </a>
+                  <br />
+                  <br />
+                  <button
+                    type="button"
+                    className="font-[500] p-[10px] bg-red-600 rounded text-white hover:brightness-90 w-full"
+                  >
+                    Comprar Pen USB
+                  </button>
+                </span>
               </span>
+              <div className="mt-10 text-[30px]">
+                <h4 className="font-bold font-two">Videos</h4>
+              
+                  <div className="grid grid-cols-3 gap-x-20 gap-y-5 items-center justify-center">
+                    <div>
+                    <iframe width="520" height="315" src="https://www.youtube.com/embed/eqUFhZG2eiM"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>	
+                    </div>
+                    <div>
+                    <iframe width="520" height="315" src="https://www.youtube.com/embed/Wddh8RCDNZM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>	
+                    </div>
+                    <div>
+                    <iframe width="520" height="315" src="https://www.youtube.com/embed/0E_xE5swByg"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    </div>
+                    <div>
+                    <iframe width="520" height="315" src="https://www.youtube.com/embed/nGQjwhkzTxI"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+                    </div>
+                    <div>
+                    <iframe width="520" height="315" src="https://www.youtube.com/embed/ww4UMtSmeEE"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>	
+                    </div>
+                    <div>
+                    <iframe width="520" height="315" src="https://www.youtube.com/embed/Q5k5bAW1u-Y"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+                    </div>
+                   
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -602,7 +648,7 @@ export default function Home() {
       </section>
 
       {/* fifth sections, about the company */}
-      <section id="about" className="text-black mb-40 px-48 text-[20px]">
+      {/* <section id="about" className="text-black mb-40 px-48 text-[20px]">
         <div className="pb-20">
           <h2 className="text-[48px] font-bold text-center  font-two">
             <span className="text-red-600">Sup</span>orte
@@ -614,9 +660,7 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center items-center  gap-10">
-          {/* <div className="flex">
-          <Image alt="" src={CarImage1}  width={600} className="rounded-lg"/>
-        </div> */}
+          
           <div className="bg-slate-100 w-[50%] h-auto my-10 rounded-lg">
             <Carousel />
           </div>
@@ -639,7 +683,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* last Section, about the Software */}
       <section id="Software" className="text-black px-48 mb-40 text-[20px]">
@@ -778,11 +822,11 @@ export default function Home() {
                   Legislação
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/software" className="hover:text-red-600">
                   Suporte
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/software" className="hover:text-red-600">
                   Contactos
