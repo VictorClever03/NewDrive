@@ -27,8 +27,36 @@ import AGE from "./src/components/AGE";
 import ageonlineImage from "@/public/ageonline.png";
 import Avaliacao from "./src/components/Avaliacao";
 import { SlideSalaOnline } from "./src/components/SlidesSalaOnline";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState<string>('');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section');
+      let currentSection = '';
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 0 && rect.bottom >= 0) {
+          currentSection = section.id;
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Chame handleScroll uma vez para ativar o link correto ao carregar a página
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <main className="w-screen my-0 mx-auto min-h-screen text-white">
       {/* navbar */}
@@ -41,51 +69,79 @@ export default function Home() {
           </NavigationMenu.Item>
           <ul className="flex justify-center items-center gap-6 font-[500]">
             <NavigationMenu.Item>
-              <Link href="#" className="hover:text-red-600">
+              <Link
+                href="#home"
+                className={
+                  activeSection === "home"
+                    ? "text-red-600"
+                    : "hover:text-red-600"
+                }
+              >
                 Início
               </Link>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
-              <Link href="#" className="hover:text-red-600">
+              <Link
+                href="#about"
+                className={
+                  activeSection === "about"
+                    ? "text-red-600"
+                    : "hover:text-red-600"
+                }
+              >
                 Sobre
               </Link>
             </NavigationMenu.Item>
+
             <NavigationMenu.Item className="group">
-              <NavigationMenu.Trigger className="hover:text-red-600 flex ">
+              <NavigationMenu.Trigger
+                className={
+                  activeSection === "software"
+                    ? "text-red-600 flex"
+                    : "hover:text-red-600 flex"
+                }
+              >
                 Software
                 <ChevronDown className="group-hover:rotate-180 transition-transform duration-150" />
               </NavigationMenu.Trigger>
               <NavigationMenu.Content className="bg-slate-600 absolute top-[107px] rounded-sm grid grid-cols-2  items-center justify-center">
-                <Link href="#" className="hover:bg-red-600 p-4">
+                <Link href="#software" className="hover:bg-red-600 p-4">
                   AGE
                 </Link>
-                <Link href="#" className="hover:bg-red-600 p-4">
+                <Link href="#software" className="hover:bg-red-600 p-4">
                   AGE Online
                 </Link>
-                <Link href="#" className="hover:bg-red-600 p-4">
+                <Link href="#software" className="hover:bg-red-600 p-4">
                   AVALIAÇÃO
                 </Link>
-                <Link href="#" className="hover:bg-red-600 p-4">
+                <Link href="#software" className="hover:bg-red-600 p-4">
                   SALA VIRTUAL
                 </Link>
               </NavigationMenu.Content>
             </NavigationMenu.Item>
+
             <NavigationMenu.Item className="group">
-              <NavigationMenu.Trigger className="hover:text-red-600 flex ">
+              <NavigationMenu.Trigger
+                className={
+                  activeSection === "legis"
+                    ? "text-red-600 flex"
+                    : "hover:text-red-600 flex"
+                }
+              >
                 Legislação{" "}
                 <ChevronDown className="group-hover:rotate-180 transition-transform duration-150" />
               </NavigationMenu.Trigger>
               <NavigationMenu.Content className="bg-slate-600 absolute top-[107px] rounded-sm grid grid-cols-2  items-center justify-center">
-                <Link href="#" className="hover:bg-red-600 p-4">
+                <Link href="#legis" className="hover:bg-red-600 p-4">
                   Regulamento Da Habilitação Legal Para Conduzir
                 </Link>
-                <Link href="#" className="hover:bg-red-600 p-4">
+                <Link href="#legis" className="hover:bg-red-600 p-4">
                   Regulamento De Sinalização Do Trânsito
                 </Link>
-                <Link href="#" className="hover:bg-red-600 p-4">
+                <Link href="#legis" className="hover:bg-red-600 p-4">
                   Código Da Estrada
                 </Link>
-                <Link href="#" className="hover:bg-red-600 p-4">
+                <Link href="#legis" className="hover:bg-red-600 p-4">
                   Regime Jurídico Do Ensino Da Condução
                 </Link>
               </NavigationMenu.Content>
@@ -96,7 +152,14 @@ export default function Home() {
               </Link>
             </NavigationMenu.Item> */}
             <NavigationMenu.Item>
-              <Link href="#" className="hover:text-red-600">
+              <Link
+                href="#contact"
+                className={
+                  activeSection === "contact"
+                    ? "text-red-600"
+                    : "hover:text-red-600"
+                }
+              >
                 Contactos
               </Link>
             </NavigationMenu.Item>
@@ -114,7 +177,7 @@ export default function Home() {
 
       {/* first section, the landing */}
       <section
-        id="landing"
+        id="home"
         className="relative top-[100px] text-black flex justify-around items-center px-36 mx-auto overflow-x-hidden pt-10 mb-36 text-[20px]"
       >
         <div className="flex flex-col justify-center items-start gap-4 w-[600px]">
@@ -150,12 +213,12 @@ export default function Home() {
         </div>
       </section>
       {/* horizontal page wrapper */}
-      <div className="App bg-slate-100 h-28 px-48 mb-40">
+      <div className="App bg-slate-100 h-28 px-48 ">
         <SwipperComponent />
       </div>
 
       {/* second sections, about the company */}
-      <section id="about" className="text-black mb-40 px-48 text-[20px]">
+      <section id="about" className="text-black pt-40 px-48 text-[20px]">
         <div className="pb-20">
           <h2 className="text-[48px] font-bold text-center  font-two">
             <span className="text-red-600">Sobre</span> Empresa
@@ -192,7 +255,7 @@ export default function Home() {
       </section>
 
       {/* third sections, about the company */}
-      <section id="about" className="text-black mb-40  text-[20px]">
+      <section id="software" className="text-black pt-40  text-[20px]">
         <div className="pb-20 px-48">
           <h2 className="text-[48px] font-bold text-center  font-two">
             <span className="text-red-600">O</span> Software
@@ -235,10 +298,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div
-          id="cards"
-          className="flex flex-row justify-between items-center gap-10 text-white min-w-52 px-36 "
-        >
+        <div className="flex flex-row justify-between items-center gap-10 text-white min-w-52 px-36 ">
           <div className="bg-slate-500 p-10 flex justify-center items-center flex-col gap-5 rounded-md flex-wrap cursor-pointer hover:brightness-90">
             <Handshake className="w-10 h-10" />
             <h3 className="font-two font-bold text-[20px]">AGE</h3>
@@ -300,7 +360,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div id="theSoftware ">
+        <div>
           <div className="px-48 mt-20">
             <div className="">
               <span className="text-justify">
@@ -579,27 +639,56 @@ export default function Home() {
               </span>
               <div className="mt-10 text-[30px]">
                 <h4 className="font-bold font-two">Videos</h4>
-              
-                  <div className="grid grid-cols-3 gap-x-20 gap-y-5 items-center justify-center">
-                    <div>
-                    <iframe width="520" height="315" src="https://www.youtube.com/embed/eqUFhZG2eiM"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>	
-                    </div>
-                    <div>
-                    <iframe width="520" height="315" src="https://www.youtube.com/embed/Wddh8RCDNZM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>	
-                    </div>
-                    <div>
-                    <iframe width="520" height="315" src="https://www.youtube.com/embed/0E_xE5swByg"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                    </div>
-                    <div>
-                    <iframe width="520" height="315" src="https://www.youtube.com/embed/nGQjwhkzTxI"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
-                    </div>
-                    <div>
-                    <iframe width="520" height="315" src="https://www.youtube.com/embed/ww4UMtSmeEE"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>	
-                    </div>
-                    <div>
-                    <iframe width="520" height="315" src="https://www.youtube.com/embed/Q5k5bAW1u-Y"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
-                    </div>
-                   
+
+                <div className="grid grid-cols-3 gap-x-20 gap-y-5 items-center justify-center">
+                  <div>
+                    <iframe
+                      width="520"
+                      height="315"
+                      src="https://www.youtube.com/embed/eqUFhZG2eiM"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    ></iframe>
+                  </div>
+                  <div>
+                    <iframe
+                      width="520"
+                      height="315"
+                      src="https://www.youtube.com/embed/Wddh8RCDNZM"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    ></iframe>
+                  </div>
+                  <div>
+                    <iframe
+                      width="520"
+                      height="315"
+                      src="https://www.youtube.com/embed/0E_xE5swByg"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    ></iframe>
+                  </div>
+                  <div>
+                    <iframe
+                      width="520"
+                      height="315"
+                      src="https://www.youtube.com/embed/nGQjwhkzTxI"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    ></iframe>
+                  </div>
+                  <div>
+                    <iframe
+                      width="520"
+                      height="315"
+                      src="https://www.youtube.com/embed/ww4UMtSmeEE"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    ></iframe>
+                  </div>
+                  <div>
+                    <iframe
+                      width="520"
+                      height="315"
+                      src="https://www.youtube.com/embed/Q5k5bAW1u-Y"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    ></iframe>
+                  </div>
                 </div>
               </div>
             </div>
@@ -608,7 +697,7 @@ export default function Home() {
       </section>
 
       {/* fourth sections, about the company */}
-      <section id="about" className="text-black mb-40 px-48 text-[20px]">
+      <section id="legis" className="text-black pt-40 px-48 text-[20px]">
         <div className="pb-20">
           <h2 className="text-[48px] font-bold text-center  font-two">
             <span className="text-red-600">Legis</span>lação
@@ -648,7 +737,7 @@ export default function Home() {
       </section>
 
       {/* fifth sections, about the company */}
-      {/* <section id="about" className="text-black mb-40 px-48 text-[20px]">
+      {/* <section id="about" className="text-black pt-40 px-48 text-[20px]">
         <div className="pb-20">
           <h2 className="text-[48px] font-bold text-center  font-two">
             <span className="text-red-600">Sup</span>orte
@@ -686,7 +775,7 @@ export default function Home() {
       </section> */}
 
       {/* last Section, about the Software */}
-      <section id="Software" className="text-black px-48 mb-40 text-[20px]">
+      <section id="contact" className="text-black px-48 pt-40 text-[20px]">
         <div className="pb-20">
           <h2 className="text-[48px] font-bold text-center font-two">
             <span className="text-red-600">Cont</span>actos
